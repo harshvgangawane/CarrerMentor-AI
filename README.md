@@ -1,4 +1,4 @@
-# Customer Churn Prediction System
+# CarrerMentor AI- an AI powered Carrer Recommendation System
 
 ## Problem Statement
 Choosing the right career path is a critical decision for students and professionals, but it is often overwhelming.
