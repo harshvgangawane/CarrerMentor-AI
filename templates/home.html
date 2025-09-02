@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CareerMentor AI</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CareerMentor AI</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/recommend">Recommendations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pathways">Pathways</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+     
+    <img src="{{ url_for('static', filename='images/image.webp') }}" 
+         alt="CareerMentor AI"
+         class="img-fluid mx-auto d-block mt-5"
+         style="max-width: 500px;">
+    
+        <h1 class="display-4">CareerMentor AI</h1>
+        <p class="lead">Discover your ideal career path with the power of AI.</p>
+    
+    
+
+    
+        
+        <a href="#profile" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+     <div id="profile" class="container mt-5">
+        <h3 class="mb-4">Tell us about yourself</h1>
+        <form method="POST" action="/recommend">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="skills" class="form-label">Skills</label>
+                <input type="text" class="form-control" id="skills" name="skills" 
+                       placeholder="e.g. Python, Machine Learning" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="education" class="form-label">Education Level</label>
+                <select id="education" name="education" class="form-select" required>
+                    <option value="" disabled selected>-- Select Education --</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Bachelor's">Bachelor's</option>
+                    <option value="Master's">Master's</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Get Career Recommendations</button>
+        </form>
+    </div>
+
+     
+</body>
+</html>

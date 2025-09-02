@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CareerMentor AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background:#f5f7fb; }
+    .rec-card {
+      background:#fff; border-radius:14px; padding:20px;
+      box-shadow:0 4px 12px rgba(16, 24, 40, 0.06);
+      border-left:6px solid #0b5ed7;  /* adds a visual accent */
+      transition: transform .2s ease-in-out;
+    }
+    .rec-card:hover {
+      transform: translateY(-2px);
+    }
+    .match-badge {
+      font-weight:600; background:#e9f2ff; color:#0b5ed7; border-radius:999px;
+      padding:6px 10px; font-size:.9rem;
+    }
+    .rec-title { margin:0; font-weight: 600; }
+    .rec-meta { color:#6b7280; margin:6px 0 14px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">CareerMentor AI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" href="/recommend">Recommendations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pathways">Pathways</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container py-5">
+    <header class="text-center mb-4">
+      <h2 class="fw-bold">Top Career Recommendations</h2>
+      <p class="text-muted">Hello {{ user_name }} — based on your profile, here are your best matches.</p>
+    </header>
+
+    <div class="vstack gap-3">
+      {% for rec in recs %}
+      <div class="rec-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <h4 class="rec-title">{{ rec.Carrer }}</h4>
+          <span class="match-badge">Match: {{ rec.match_percent }}%</span>
+        </div>
+        <p class="rec-meta">{{ rec.Description }}</p>
+
+        <div class="mb-3">
+          <div class="progress" style="height:10px;">
+            <div class="progress-bar bg-primary" role="progressbar"
+                 style="width: {{ rec.match_percent }}%;" aria-valuenow="{{ rec.match_percent }}"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <a class="btn btn-primary btn-sm"
+           href="{{ url_for('pathways', career_name=rec.Carrer|lower|replace(' ', '-') ) }}">
+          View Details
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-link">← Back to Home</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
