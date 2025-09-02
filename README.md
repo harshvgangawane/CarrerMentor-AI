@@ -25,8 +25,9 @@ CareerMentor AI is an AI-powered career guidance platform designed to solve this
 
 5]Built with Python, Flask, and AI models for recommendations — ensuring fast, intelligent, and user-friendly interaction.
 
-## Dataset Used
-Dataset link:https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+#Demo
+
+Try it:https://carrermentor-ai-1.onrender.com/
 
 ## Tech Stack Used
 -Python
