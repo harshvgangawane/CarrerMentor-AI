@@ -25,7 +25,16 @@ CareerMentor AI is an AI-powered career guidance platform designed to solve this
 
 5]Built with Python, Flask, and AI models for recommendations — ensuring fast, intelligent, and user-friendly interaction.
 
-##Demo
+## Features
+- 🧠 **AI-powered Career Recommendations** — Get top career options based on skills and education.
+- 🛤 **Career Pathways** — View recommended courses, roadmaps, and projects for each career.
+- 🎨 **Modern UI** — Clean, responsive interface built with Bootstrap 5.
+- 🖥 **Web-based & Lightweight** — Runs on Flask, easy to deploy locally or on cloud (Render).
+- 🔗 **Extensible** — Can integrate with AI models like Google Gemini or custom ML models for smarter recommendations.
+- 🐳 **Docker Support** — Easily containerize and deploy anywhere.
+
+
+##  Demo
 
 Try it:https://carrermentor-ai-1.onrender.com/
 
@@ -61,14 +70,30 @@ python run app.py
 ```
 
 ## Project Architecture
+src/ – Core logic (career recommendation & pathway generation)
+
+templates/ – HTML templates (home.html, carrer_recommendations.html, pathways.html)
+
+static/ – Static assets (CSS, JS, images)
+
+app.py – Main Flask application
+
+requirements.txt – Dependencies
+
+Dockerfile – (Optional) Containerization support
 
 
 ## Notebooks
 
+This project does not rely on Jupyter notebooks as it is primarily a web-based recommendation platform.
 
+## Models Used
+Currently, the system uses prompt-based AI recommendations.
+Optionally, you can integrate:
+
+LLMs like Google Gemini (Generative AI)
 
 
 
 ## Conclusion
-This project demonstrates a complete ML pipeline for predicting customer churn, from data ingestion to deployment.
-The codebase is modular, well-documented, and ready for further extension.
+CareerMentor AI provides an interactive and AI-assisted way for individuals to explore career options aligned with their skills and education. It serves as a foundation that can be extended with data-driven models, real-time labor market data, or advanced personalization for better career guidance.
