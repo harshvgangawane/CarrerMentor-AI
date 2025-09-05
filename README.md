@@ -52,8 +52,8 @@ Try it:https://carrermentor-ai-1.onrender.com/
 ## How to Run
 **Step 1. Clone the repository.**
 ```powershell
-git clone https://github.com/harshvgangawane/customer-churn-prediction-system.git
-cd "Customer Churn Prediction"
+git clone https://https://github.com/harshvgangawane/CarrerMentor-AI.git
+cd "CarrerMentor AI"
 ```
 **Step 2. (Optional) Create a virtual environment.**
 ```powershell
@@ -89,8 +89,7 @@ This project does not rely on Jupyter notebooks as it is primarily a web-based r
 
 ## Models Used
 Currently, the system uses prompt-based AI recommendations.
-Optionally, you can integrate:
-
+uses
 LLMs like Google Gemini (Generative AI)
 
 
